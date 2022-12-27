@@ -1,7 +1,7 @@
 # NBT
 A library for **Named Binary Tag (NBT)** files.
 
-# Features
+## Features
 
 - Reading compressed (*gzip*) and uncompressed NBT files
 - Writing compressed (*gzip*) NBT files
@@ -9,7 +9,7 @@ A library for **Named Binary Tag (NBT)** files.
 - Validation of ```.schematic``` files
 - Traverse data structure via *TagVisitor* 
 
-# Usage
+## Usage
 
 ## Writing Schematics
 
@@ -94,7 +94,7 @@ boolean isInvalid = result.isInvalid();
  - DATA_SIZE_DOES_NOT_MATCH_VOLUME_DESCRIPTION,
  - ONE_OR_MORE_VOLUME_ATTRIBUTES_ARE_LESS_THAN_ZERO
 
-# Data Types
+## Data Types
 |Id|Type|Class|
 |--|--|--|
 |0|End|nbt.tags.EndTag|
