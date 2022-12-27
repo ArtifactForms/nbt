@@ -11,14 +11,6 @@ A library for **Named Binary Tag (NBT)** files.
 
 ## Usage
 
-## Writing Schematics
-
-```java
-Schematic schematic = Schematic.createSchematic(width, height, length);
-schematic.setBlockAt(x, y, z, Material.WOOL_LIME);
-schematic.write(new File("./foo.schematic"));
-```
-
 ## Reading
 
 The following example shows how to read a compressed (gzip) NBT file:
@@ -39,6 +31,14 @@ File file = new File(path);
 NbtReader reader = new NbtReader(file, compressed);
 Tag root = reader.read();
 reader.close();
+```
+
+## Writing Schematics
+
+```java
+Schematic schematic = Schematic.createSchematic(width, height, length);
+schematic.setBlockAt(x, y, z, Material.WOOL_LIME);
+schematic.write(new File("./foo.schematic"));
 ```
 
 ## Visualize
