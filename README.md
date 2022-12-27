@@ -95,20 +95,20 @@ boolean isInvalid = result.isInvalid();
  - ONE_OR_MORE_VOLUME_ATTRIBUTES_ARE_LESS_THAN_ZERO
 
 # Data Types
-|Id|Type|
-|--|--|
-|0|End|
-|1|Byte|
-|2|Short|
-|3|Int|
-|4|Long|
-|5|Float|
-|6|Double|
-|7|Byte-Array|
-|8|String|
-|9|List|
-|10|Compound|
-|11|Int-Array|
-|12|Long-Array|
+|Id|Type|Class|
+|--|--|--|
+|0|End|nbt.tags.EndTag|
+|1|Byte|nbt.tags.ByteTag|
+|2|Short|nbt.tags.ShortTag|
+|3|Int|nbt.tags.IntTag|
+|4|Long|nbt.tags.LongTag|
+|5|Float|nbt.tags.FloatTag|
+|6|Double|nbt.tags.DoubleTag|
+|7|Byte-Array|nbt.tags.ByteArrayTag|
+|8|String|nbt.tags.StringTag|
+|9|List|nbt.tags.ListTag|
+|10|Compound|nbt.tags.CompoundTag|
+|11|Int-Array|nbt.tags.IntArrayTag|
+|12|Long-Array|nbt.tags.LongArrayTag|
 
 
