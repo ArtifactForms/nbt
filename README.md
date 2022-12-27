@@ -65,7 +65,7 @@ TAG_Compound('Schematic'): 15 entries
 } TAG_End
 ```
 
-# Validation
+# Schematic Validation
 
 ``` java
 CompoundTag root;
