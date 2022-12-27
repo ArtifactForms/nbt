@@ -4,7 +4,7 @@ A library for **Named Binary Tag (NBT)** files.
 # Features
 
 - Reading compressed (*gzip*) and uncompressed NBT files
-- Writing NBT files
+- Writing compressed (*gzip*) NBT files
 - Writing ```.schematic``` files
 - Validation of ```.schematic``` files
 
