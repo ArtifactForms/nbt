@@ -93,3 +93,21 @@ boolean isInvalid = result.isInvalid();
  - DATA_SIZE_DOES_NOT_MATCH_VOLUME_DESCRIPTION,
  - ONE_OR_MORE_VOLUME_ATTRIBUTES_ARE_LESS_THAN_ZERO
 
+# Data Types
+|Id|Type|
+|--|--|
+|0|End|
+|1|Byte|
+|2|Short|
+|3|Int|
+|4|Long|
+|5|Float|
+|6|Double|
+|7|Byte-Array|
+|8|String|
+|9|List|
+|10|Compound|
+|11|Int-Array|
+|12|Long-Array|
+
+
