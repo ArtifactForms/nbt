@@ -11,7 +11,7 @@ A library for **Named Binary Tag (NBT)** files.
 
 # Usage
 
-## Writing
+## Writing Schematics
 
 ```java
 Schematic schematic = Schematic.createSchematic(width, height, length);
