@@ -21,7 +21,7 @@ schematic.write(new File("./foo.schematic"));
 
 ## Reading
 
-The following example shows how to read a gzipped NBT file:
+The following example shows how to read a compressed (gzip) NBT file:
 
 ```java
 boolean compressed = true;
