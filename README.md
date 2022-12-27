@@ -31,8 +31,9 @@ reader.close();
 ## Visualize
 
 ```java
+boolean printEndTag = true;
 Tag root;
-PrintPrettyTreeTagVisitor visitor = new PrintPrettyTreeTagVisitor(true);
+PrintPrettyTreeTagVisitor visitor = new PrintPrettyTreeTagVisitor(printEndTag);
 root.accept(visitor);
 System.out.println(visitor.getString());
 ```
