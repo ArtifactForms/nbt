@@ -1,6 +1,13 @@
 # nbt
 NBT file library
 
+# Features
+
+- Reading compressed and uncompressed NBT files
+- Writing NBT files
+- Writing ```.schematic``` files
+- Validation of ```.schematic``` files
+
 # Usage
 
 ## Writing
