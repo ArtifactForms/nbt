@@ -7,6 +7,7 @@ A library for **Named Binary Tag (NBT)** files.
 - Writing compressed (*gzip*) NBT files
 - Writing ```.schematic``` files
 - Validation of ```.schematic``` files
+- Traverse data structure via *TagVisitor* 
 
 # Usage
 
