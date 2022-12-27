@@ -1,5 +1,5 @@
-# nbt
-NBT file library
+# NBT
+A library for **Named Binary Tag (NBT)** files.
 
 # Features
 
