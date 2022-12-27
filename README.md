@@ -26,7 +26,7 @@ The following example shows how to read a gzipped NBT file:
 ```java
 boolean compressed = true;
 File file = new File(path);
-NbtReader reader = new NbtReader(file, compressed):
+NbtReader reader = new NbtReader(file, compressed);
 Tag root = reader.read();
 reader.close();
 ```
