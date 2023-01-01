@@ -16,32 +16,32 @@ import nbt.tags.StringTag;
 
 public interface TagVisitor {
 
-    void visit(ByteArrayTag tag);
+	void visit(ByteArrayTag tag);
 
-    void visit(ByteTag tag);
+	void visit(ByteTag tag);
 
-    void visit(DoubleTag tag);
+	void visit(DoubleTag tag);
 
-    void visit(FloatTag tag);
+	void visit(FloatTag tag);
 
-    void visit(IntTag tag);
+	void visit(IntTag tag);
 
-    void visit(LongTag tag);
+	void visit(LongTag tag);
 
-    void visit(ShortTag tag);
+	void visit(ShortTag tag);
 
-    void visit(IntArrayTag tag);
+	void visit(IntArrayTag tag);
 
-    void visit(StringTag tag);
+	void visit(StringTag tag);
 
-    void visit(CompoundTag tag);
+	void visit(CompoundTag tag);
 
-    void visit(ListTag tag);
+	void visit(ListTag tag);
 
-    void visit(LongArrayTag tag);
+	void visit(LongArrayTag tag);
 
-    void visit(EndTag tag);
+	void visit(EndTag tag);
 
-    void onEndList(ListTag tag);
+	void onEndList(ListTag tag);
 
 }

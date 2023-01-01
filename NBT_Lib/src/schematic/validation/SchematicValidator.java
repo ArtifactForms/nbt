@@ -24,49 +24,49 @@ import schematic.validation.rules.ValidationRule;
 
 public class SchematicValidator {
 
-    private SchematicValidationResult result;
-    private List<ValidationRule> rules;
+	private SchematicValidationResult result;
+	private List<ValidationRule> rules;
 
-    public SchematicValidator() {
-	rules = new ArrayList<ValidationRule>();
-	injectRules();
-    }
-
-    private void injectRules() {
-	addValidationRule(new RootNameIsSchematicRule());
-	addValidationRule(new RequiredAttributeWidthRule());
-	addValidationRule(new RequiredAttributeHeightRule());
-	addValidationRule(new RequiredAttributeLengthRule());
-	addValidationRule(new RequiredAttributeBlocksRule());
-	addValidationRule(new RequiredAttributeDataRule());
-	addValidationRule(new RequiredAttributeMaterialsRule());
-	addValidationRule(new TypeOfWidthIsShortRule());
-	addValidationRule(new TypeOfHeightIsShortRule());
-	addValidationRule(new TypeOfLengthIsShortRule());
-	addValidationRule(new TypeOfBlocksIsByteArrayRule());
-	addValidationRule(new TypeOfDataIsByteArrayRule());
-	addValidationRule(new BlocksSizeHasToMatchVolumeDescriptionRule());
-	addValidationRule(new DataSizeHasToMatchVolumeDescriptionRule());
-	addValidationRule(new IfOneWorldEditInfoIsProvidedAllShouldBeProvidedRule());
-	addValidationRule(new NoNegativeVolumeAttributesRule());
-    }
-
-    public SchematicValidationResult validate(CompoundTag root) {
-	result = new SchematicValidationResult();
-	for (ValidationRule rule : rules) {
-	    if (rule.isInvalid(root)) {
-		result.addCause(rule.getCause());
-	    }
+	public SchematicValidator() {
+		rules = new ArrayList<ValidationRule>();
+		injectRules();
 	}
-	return result;
-    }
 
-    public void addValidationRule(ValidationRule rule) {
-	rules.add(rule);
-    }
+	private void injectRules() {
+		addValidationRule(new RootNameIsSchematicRule());
+		addValidationRule(new RequiredAttributeWidthRule());
+		addValidationRule(new RequiredAttributeHeightRule());
+		addValidationRule(new RequiredAttributeLengthRule());
+		addValidationRule(new RequiredAttributeBlocksRule());
+		addValidationRule(new RequiredAttributeDataRule());
+		addValidationRule(new RequiredAttributeMaterialsRule());
+		addValidationRule(new TypeOfWidthIsShortRule());
+		addValidationRule(new TypeOfHeightIsShortRule());
+		addValidationRule(new TypeOfLengthIsShortRule());
+		addValidationRule(new TypeOfBlocksIsByteArrayRule());
+		addValidationRule(new TypeOfDataIsByteArrayRule());
+		addValidationRule(new BlocksSizeHasToMatchVolumeDescriptionRule());
+		addValidationRule(new DataSizeHasToMatchVolumeDescriptionRule());
+		addValidationRule(new IfOneWorldEditInfoIsProvidedAllShouldBeProvidedRule());
+		addValidationRule(new NoNegativeVolumeAttributesRule());
+	}
 
-    public SchematicValidationResult getResult() {
-	return result;
-    }
+	public SchematicValidationResult validate(CompoundTag root) {
+		result = new SchematicValidationResult();
+		for (ValidationRule rule : rules) {
+			if (rule.isInvalid(root)) {
+				result.addCause(rule.getCause());
+			}
+		}
+		return result;
+	}
+
+	public void addValidationRule(ValidationRule rule) {
+		rules.add(rule);
+	}
+
+	public SchematicValidationResult getResult() {
+		return result;
+	}
 
 }
