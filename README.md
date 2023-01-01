@@ -34,7 +34,9 @@ reader.close();
 ```
 The default mode is compressed.
 
-```NbtReader reader = new NbtReader();```
+```java
+NbtReader reader = new NbtReader();
+```
 
 ## Writing Schematics
 
