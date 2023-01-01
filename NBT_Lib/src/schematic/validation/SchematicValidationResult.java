@@ -12,7 +12,7 @@ public class SchematicValidationResult {
 	}
 
 	public InvalidSchematicCauses[] getCauses() {
-		return (InvalidSchematicCauses[]) causes.toArray(new InvalidSchematicCauses[causes.size()]);
+		return causes.toArray(new InvalidSchematicCauses[causes.size()]);
 	}
 
 	public String getCausesAsString() {
