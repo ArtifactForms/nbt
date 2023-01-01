@@ -32,6 +32,9 @@ NbtReader reader = new NbtReader(file, compressed);
 Tag root = reader.read();
 reader.close();
 ```
+The default mode is compressed.
+
+```NbtReader reader = new NbtReader();```
 
 ## Writing Schematics
 
