@@ -1,4 +1,5 @@
 [![Java CI with Maven](https://github.com/ArtifactForms/nbt/actions/workflows/maven.yml/badge.svg)](https://github.com/ArtifactForms/nbt/actions/workflows/maven.yml)
+[![CodeQL Advanced](https://github.com/ArtifactForms/nbt/actions/workflows/codeql.yml/badge.svg)](https://github.com/ArtifactForms/nbt/actions/workflows/codeql.yml)
 
 # NBT Library
 
