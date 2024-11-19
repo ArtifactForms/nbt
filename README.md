@@ -1,7 +1,10 @@
 [![Java CI with Maven](https://github.com/ArtifactForms/nbt/actions/workflows/maven.yml/badge.svg)](https://github.com/ArtifactForms/nbt/actions/workflows/maven.yml)
 
-# NBT
-A library for **Named Binary Tag (NBT)** files.
+# NBT Library
+
+This library provides functionalities for reading, writing, and validating Named Binary Tag (NBT) files
+used for data storage in Minecraft. It supports reading and writing compressed (gzip) NBT files and
+writing schematic files (.schematic).
 
 ## Features
 
