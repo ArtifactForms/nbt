@@ -12,7 +12,7 @@ import nbt.visitor.PrintPrettyTreeTagVisitor;
 
 public class ReadLevelDat1_12_2_Client_SurvivalTest {
 
-    private static final String FILE = TestUtil.TEST_FILES_PATH + "level.dat";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "level.dat";
 
     private static CompoundTag read() throws IOException {
 	NbtReader reader = new NbtReader(new File(FILE), true);

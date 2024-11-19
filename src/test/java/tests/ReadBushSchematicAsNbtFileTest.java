@@ -14,7 +14,7 @@ import nbt.tags.Tag;
 
 public class ReadBushSchematicAsNbtFileTest {
 
-    private static final String FILE = TestUtil.TEST_FILES_PATH + "bush.schematic";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "bush.schematic";
 
     private static NbtFile read() throws IOException {
 	NbtReader reader = new NbtReader(new File(FILE));

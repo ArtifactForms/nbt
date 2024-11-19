@@ -14,7 +14,7 @@ import nbt.tags.Tag;
 public class BaseTestNestedCompounds {
 
     private static boolean compressed = true;
-    private static final String FILE = TestUtil.TEST_FILES_PATH + "nested_compounds.nbt";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "nested_compounds.nbt";
 
     private static CompoundTag read() throws IOException {
 	NbtReader reader = new NbtReader(new File(FILE), compressed);

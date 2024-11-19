@@ -17,7 +17,7 @@ import nbt.tags.Tag;
  */
 public class ReadUncompressedHelloWorldFileTest {
 
-    private static final String FILE = TestUtil.TEST_FILES_PATH + "hello_world.nbt";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "hello_world.nbt";
 
     private static CompoundTag read() throws IOException {
 	NbtReader reader = new NbtReader(new File(FILE), false);

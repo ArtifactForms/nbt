@@ -19,7 +19,7 @@ import nbt.tags.Tag;
 public class BaseTestShortTag {
 
     private static boolean compressed = true;
-    private static final String FILE = TestUtil.TEST_FILES_PATH + "base_short_tag.nbt";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "base_short_tag.nbt";
 
     private static CompoundTag read() throws IOException {
 	NbtReader reader = new NbtReader(new File(FILE), compressed);
