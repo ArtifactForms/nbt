@@ -6,7 +6,7 @@ This library provides functionalities for reading, writing, and validating Named
 used for data storage in Minecraft. It supports reading and writing compressed (gzip) NBT files and
 writing schematic files (.schematic).
 
-# Background / Intension
+## Background / Intension
 
 The NBT library originated as a side project during a larger Minecraft project. In 2021, I was asked by a 
 building team to develop a tool that could import large 3D models (in OBJ format) from Blender directly into Minecraft worlds.
