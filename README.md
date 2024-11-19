@@ -6,6 +6,20 @@ This library provides functionalities for reading, writing, and validating Named
 used for data storage in Minecraft. It supports reading and writing compressed (gzip) NBT files and
 writing schematic files (.schematic).
 
+# Background / Intension
+
+The NBT library originated as a side project during a larger Minecraft project. In 2021, I was asked by a 
+building team to develop a tool that could import large 3D models (in OBJ format) from Blender directly into Minecraft worlds.
+
+Previously, the team had tried to automate this process using the online Voxelizer from Drububu. While this tool offers the 
+ability to export voxel data into Minecraft Schematics, it encounters limitations when dealing with large models. 
+The restrictions regarding maximum size and block count made it necessary to split large models into smaller parts 
+and individually integrate them into Minecraft - a time-consuming process.
+
+To solve this problem, I developed a tool that transfers OBJ models directly into Minecraft worlds. To do this, 
+it was necessary to convert the data into the NBT format, which Minecraft uses to store world data. The development 
+of this tool led to the creation of the NBT library.
+
 ## Features
 
 - Reading compressed (*gzip*) and uncompressed NBT files
