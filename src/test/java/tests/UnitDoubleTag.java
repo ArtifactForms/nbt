@@ -12,155 +12,155 @@ import nbt.tags.Tag;
 public class UnitDoubleTag {
 
     private static Tag createTestTag() {
-	return new DoubleTag("DoubleTag", 0.0d);
+        return new DoubleTag("DoubleTag", 0.0d);
     }
 
     @Test
     public void isListReturnsFalse() {
-	Tag tag = createTestTag();
-	Assert.assertEquals(false, tag.isList());
+        Tag tag = createTestTag();
+        Assert.assertEquals(false, tag.isList());
     }
 
     @Test
     public void getTagCountIsZeroByDefault() {
-	Tag tag = createTestTag();
-	Assert.assertEquals(0, tag.getTagCount());
+        Tag tag = createTestTag();
+        Assert.assertEquals(0, tag.getTagCount());
     }
 
     @Test
     public void getSetValue() {
-	double newValue = 100.22d;
-	DoubleTag tag = (DoubleTag) createTestTag();
-	tag.setValue(newValue);
-	Assert.assertEquals(newValue, tag.getValue(), 0.001d);
+        double newValue = 100.22d;
+        DoubleTag tag = (DoubleTag) createTestTag();
+        tag.setValue(newValue);
+        Assert.assertEquals(newValue, tag.getValue(), 0.001d);
     }
 
     @Test
     public void isLeaf() {
-	Tag tag = createTestTag();
-	Assert.assertTrue(tag.isLeaf());
+        Tag tag = createTestTag();
+        Assert.assertTrue(tag.isLeaf());
     }
 
     @Test
     public void doesNotAllowChildren() {
-	Tag tag = createTestTag();
-	Assert.assertFalse(tag.allowsChildren());
+        Tag tag = createTestTag();
+        Assert.assertFalse(tag.allowsChildren());
     }
 
     @Test
     public void tagCountIsZero() {
-	Tag tag = createTestTag();
-	Assert.assertEquals(0, tag.getTagCount());
+        Tag tag = createTestTag();
+        Assert.assertEquals(0, tag.getTagCount());
     }
 
     @Test
     public void getParentReturnsNullByDefault() {
-	Tag tag = createTestTag();
-	Assert.assertNull(tag.getParent());
+        Tag tag = createTestTag();
+        Assert.assertNull(tag.getParent());
     }
 
     @Test
     public void hasParentIsFalseByDefault() {
-	Tag tag = createTestTag();
-	Assert.assertFalse(tag.hasParent());
+        Tag tag = createTestTag();
+        Assert.assertFalse(tag.hasParent());
     }
 
     @Test
     public void getSetName() {
-	String newName = "NewTestName";
-	Tag tag = createTestTag();
-	tag.setName(newName);
-	Assert.assertEquals(newName, tag.getName());
+        String newName = "NewTestName";
+        Tag tag = createTestTag();
+        tag.setName(newName);
+        Assert.assertEquals(newName, tag.getName());
     }
 
     @Test
     public void isRootByDefault() {
-	Tag tag = createTestTag();
-	Assert.assertTrue(tag.isRoot());
+        Tag tag = createTestTag();
+        Assert.assertTrue(tag.isRoot());
     }
 
     @Test
     public void isNotAList() {
-	Tag tag = createTestTag();
-	Assert.assertFalse(tag.isList());
+        Tag tag = createTestTag();
+        Assert.assertFalse(tag.isList());
     }
 
     @Test
     public void hasParentAfterAddingToCompound() {
-	CompoundTag compoundTag = new CompoundTag();
-	Tag tag = createTestTag();
-	compoundTag.add(tag);
-	compoundTag.add(new EndTag());
-	Assert.assertTrue(tag.hasParent());
+        CompoundTag compoundTag = new CompoundTag();
+        Tag tag = createTestTag();
+        compoundTag.add(tag);
+        compoundTag.add(new EndTag());
+        Assert.assertTrue(tag.hasParent());
     }
 
     @Test
     public void isNotRootAfterAddingToCompound() {
-	CompoundTag compoundTag = new CompoundTag();
-	Tag tag = createTestTag();
-	compoundTag.add(tag);
-	compoundTag.add(new EndTag());
-	Assert.assertFalse(tag.isRoot());
+        CompoundTag compoundTag = new CompoundTag();
+        Tag tag = createTestTag();
+        compoundTag.add(tag);
+        compoundTag.add(new EndTag());
+        Assert.assertFalse(tag.isRoot());
     }
 
     @Test(expected = NbtException.class)
     public void addingChildElementThrowsException() {
-	Tag tag = createTestTag();
-	tag.add(createTestTag());
+        Tag tag = createTestTag();
+        tag.add(createTestTag());
     }
 
     @Test(expected = NbtException.class)
     public void addingNullElementThrowsException() {
-	Tag tag = createTestTag();
-	tag.add(null);
+        Tag tag = createTestTag();
+        tag.add(null);
     }
 
     @Test
     public void acceptVisitor() {
-	Tag tag = createTestTag();
-	TestCountVisitsVisitor visitor = new TestCountVisitsVisitor();
-	tag.accept(visitor);
-	Assert.assertEquals(1, visitor.getVisitedDoubleTagCount());
-	Assert.assertEquals(1, visitor.getVisitedTotal());
+        Tag tag = createTestTag();
+        TestCountVisitsVisitor visitor = new TestCountVisitsVisitor();
+        tag.accept(visitor);
+        Assert.assertEquals(1, visitor.getVisitedDoubleTagCount());
+        Assert.assertEquals(1, visitor.getVisitedTotal());
     }
 
     @Test
     public void getRootReturnsSelfByDefault() {
-	Tag tag = createTestTag();
-	Assert.assertTrue(tag.getRoot() == tag);
+        Tag tag = createTestTag();
+        Assert.assertTrue(tag.getRoot() == tag);
     }
 
     @Test
     public void getRootReturnsCompoundAfterAddedTo() {
-	CompoundTag compoundTag = new CompoundTag();
-	Tag tag = createTestTag();
-	compoundTag.add(tag);
-	compoundTag.add(new EndTag());
-	Assert.assertTrue(compoundTag == tag.getRoot());
+        CompoundTag compoundTag = new CompoundTag();
+        Tag tag = createTestTag();
+        compoundTag.add(tag);
+        compoundTag.add(new EndTag());
+        Assert.assertTrue(compoundTag == tag.getRoot());
     }
 
     @Test(expected = NbtException.class)
     public void removeTagThrowsException() {
-	Tag tag = createTestTag();
-	tag.remove(new EndTag());
+        Tag tag = createTestTag();
+        tag.remove(new EndTag());
     }
 
     @Test(expected = NbtException.class)
     public void removeNullTagThrowsException() {
-	Tag tag = createTestTag();
-	tag.remove(null);
+        Tag tag = createTestTag();
+        tag.remove(null);
     }
 
     @Test
     public void getIndexOfTagReturnsMinusOneByDefault() {
-	Tag tag = createTestTag();
-	Assert.assertEquals(-1, tag.getIndexOf(new EndTag()));
+        Tag tag = createTestTag();
+        Assert.assertEquals(-1, tag.getIndexOf(new EndTag()));
     }
 
     @Test(expected = NbtException.class)
     public void getBranchThrowsExceptionByDefault() {
-	Tag tag = createTestTag();
-	tag.getBranch();
+        Tag tag = createTestTag();
+        tag.getBranch();
     }
 
 }

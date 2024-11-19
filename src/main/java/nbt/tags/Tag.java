@@ -8,137 +8,143 @@ import nbt.visitor.TagVisitor;
 
 public abstract class Tag {
 
-	public static final String EMPTY_STRING = "";
+    public static final String EMPTY_STRING = "";
 
-	private Tag parent;
-	private String name;
-	private List<Tag> tags;
+    private Tag parent;
 
-	public Tag(String name) {
-		this.name = name;
-		tags = new ArrayList<Tag>();
-	}
+    private String name;
 
-	public abstract void accept(TagVisitor visitor);
+    private List<Tag> tags;
 
-	public abstract NbtTagType getType();
+    public Tag(String name) {
+        this.name = name;
+        tags = new ArrayList<Tag>();
+    }
 
-	public int getTagCountExceptEndTags() {
-		int count = 0;
-		for (Tag tag : tags) {
-			if (tag.getType() != NbtTagType.END)
-				count++;
-		}
-		return count;
-	}
+    public abstract void accept(TagVisitor visitor);
 
-	public Tag getTagByName(String name) {
-		if (this.name.equals(name))
-			return this;
+    public abstract NbtTagType getType();
 
-		if (!allowsChildren())
-			return null;
+    public int getTagCountExceptEndTags() {
+        int count = 0;
+        for (Tag tag : tags) {
+            if (tag.getType() != NbtTagType.END)
+                count++;
+        }
+        return count;
+    }
 
-		for (Tag tag : tags) {
-			Tag result = tag.getTagByName(name);
-			if (result != null)
-				return result;
-		}
+    public Tag getTagByName(String name) {
+        if (this.name.equals(name))
+            return this;
 
-		return null;
-	}
+        if (!allowsChildren())
+            return null;
 
-	public int getIndexOf(Tag tag) {
-		return tags.indexOf(tag);
-	}
+        for (Tag tag : tags) {
+            Tag result = tag.getTagByName(name);
+            if (result != null)
+                return result;
+        }
 
-	public boolean isList() {
-		return false;
-	}
+        return null;
+    }
 
-	public void add(Tag tag) {
-		if (tag == null) {
-			throw new NbtException("Adding null elements is not allowed.");
-		}
+    public int getIndexOf(Tag tag) {
+        return tags.indexOf(tag);
+    }
 
-		if (!allowsChildren()) {
-			throw new NbtException("This tag does not allow child elements.");
-		}
+    public boolean isList() {
+        return false;
+    }
 
-		tag.setParent(this);
-		tags.add(tag);
-	}
+    public void add(Tag tag) {
+        if (tag == null) {
+            throw new NbtException("Adding null elements is not allowed.");
+        }
 
-	public void remove(Tag tag) {
-		if (!allowsChildren())
-			throw new NbtException("This operation is not supported for this kind of tag (allowsChildren == false).");
+        if (!allowsChildren()) {
+            throw new NbtException("This tag does not allow child elements.");
+        }
 
-		if (tag == null)
-			return;
+        tag.setParent(this);
+        tags.add(tag);
+    }
 
-		if (!tags.contains(tag))
-			return;
+    public void remove(Tag tag) {
+        if (!allowsChildren())
+            throw new NbtException(
+                    "This operation is not supported for this kind of tag (allowsChildren == false)."
+            );
 
-		tag.setParent(null);
-		tags.remove(tag);
-	}
+        if (tag == null)
+            return;
 
-	public int getTagCount() {
-		return tags.size();
-	}
+        if (!tags.contains(tag))
+            return;
 
-	public Tag getTagAt(int index) {
-		return tags.get(index);
-	}
+        tag.setParent(null);
+        tags.remove(tag);
+    }
 
-	public boolean isLeaf() {
-		if (!allowsChildren())
-			return true;
+    public int getTagCount() {
+        return tags.size();
+    }
 
-		return tags.size() == 0;
-	}
+    public Tag getTagAt(int index) {
+        return tags.get(index);
+    }
 
-	public boolean allowsChildren() {
-		return false;
-	}
+    public boolean isLeaf() {
+        if (!allowsChildren())
+            return true;
 
-	public Tag getBranch() {
-		if (parent == null) {
-			if (allowsChildren())
-				return this;
-			throw new NbtException("Parent is null. And this tag is not a valid branch.");
-		}
-		return parent;
-	}
+        return tags.size() == 0;
+    }
 
-	public Tag getRoot() {
-		if (parent == null)
-			return this;
-		return getParent().getRoot();
-	}
+    public boolean allowsChildren() {
+        return false;
+    }
 
-	public boolean isRoot() {
-		return parent == null;
-	}
+    public Tag getBranch() {
+        if (parent == null) {
+            if (allowsChildren())
+                return this;
+            throw new NbtException(
+                    "Parent is null. And this tag is not a valid branch."
+            );
+        }
+        return parent;
+    }
 
-	public boolean hasParent() {
-		return parent != null;
-	}
+    public Tag getRoot() {
+        if (parent == null)
+            return this;
+        return getParent().getRoot();
+    }
 
-	public Tag getParent() {
-		return parent;
-	}
+    public boolean isRoot() {
+        return parent == null;
+    }
 
-	protected void setParent(Tag parent) {
-		this.parent = parent;
-	}
+    public boolean hasParent() {
+        return parent != null;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Tag getParent() {
+        return parent;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    protected void setParent(Tag parent) {
+        this.parent = parent;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }

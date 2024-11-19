@@ -19,51 +19,52 @@ import nbt.tags.Tag;
 public class BaseTestFloatTag {
 
     private static boolean compressed = true;
-    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "base_float_tag.nbt";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER
+            + "base_float_tag.nbt";
 
     private static CompoundTag read() throws IOException {
-	NbtReader reader = new NbtReader(new File(FILE), compressed);
-	Tag tag = reader.read();
-	reader.close();
-	return (CompoundTag) tag;
+        NbtReader reader = new NbtReader(new File(FILE), compressed);
+        Tag tag = reader.read();
+        reader.close();
+        return (CompoundTag) tag;
     }
 
     @Test
     public void rootNameIsEmpty() throws IOException {
-	CompoundTag root = read();
-	Assert.assertTrue(root.getName().isEmpty());
+        CompoundTag root = read();
+        Assert.assertTrue(root.getName().isEmpty());
     }
 
     @Test
     public void rootContainsTwoElements() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(2, root.getTagCount());
+        CompoundTag root = read();
+        Assert.assertEquals(2, root.getTagCount());
     }
 
     @Test
     public void firstElementIsFloatTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(NbtTagType.FLOAT, root.getTagAt(0).getType());
+        CompoundTag root = read();
+        Assert.assertEquals(NbtTagType.FLOAT, root.getTagAt(0).getType());
     }
 
     @Test
     public void secondElementIsEndTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(NbtTagType.END, root.getTagAt(1).getType());
+        CompoundTag root = read();
+        Assert.assertEquals(NbtTagType.END, root.getTagAt(1).getType());
     }
 
     @Test
     public void floatTagValueIsMinValue() throws IOException {
-	CompoundTag root = read();
-	FloatTag floatTag = (FloatTag) root.getTagAt(0);
-	Assert.assertEquals(Float.MIN_VALUE, floatTag.getValue(), 0.0001f);
+        CompoundTag root = read();
+        FloatTag floatTag = (FloatTag) root.getTagAt(0);
+        Assert.assertEquals(Float.MIN_VALUE, floatTag.getValue(), 0.0001f);
     }
 
     @Test
     public void floatTagNameIsFloatTest() throws IOException {
-	CompoundTag root = read();
-	FloatTag floatTag = (FloatTag) root.getTagAt(0);
-	Assert.assertEquals("floatTest", floatTag.getName());
+        CompoundTag root = read();
+        FloatTag floatTag = (FloatTag) root.getTagAt(0);
+        Assert.assertEquals("floatTest", floatTag.getName());
     }
 
 }

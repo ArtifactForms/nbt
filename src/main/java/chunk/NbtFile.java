@@ -16,118 +16,118 @@ import nbt.tags.Tag;
 
 public class NbtFile {
 
-	private Tag root;
+    private Tag root;
 
-	public NbtFile(Tag root) {
-		this.root = root;
-	}
+    public NbtFile(Tag root) {
+        this.root = root;
+    }
 
-	public Tag getTag(String name) throws NoSuchTagException {
-		Tag tag = root.getTagByName(name);
+    public Tag getTag(String name) throws NoSuchTagException {
+        Tag tag = root.getTagByName(name);
 
-		if (tag == null)
-			throw new NoSuchTagException(name);
+        if (tag == null)
+            throw new NoSuchTagException(name);
 
-		return tag;
-	}
+        return tag;
+    }
 
-	private Tag getTag(String name, NbtTagType type) throws NbtException {
-		Tag tag = root.getTagByName(name);
+    private Tag getTag(String name, NbtTagType type) throws NbtException {
+        Tag tag = root.getTagByName(name);
 
-		if (tag == null)
-			throw new NoSuchTagException(name);
+        if (tag == null)
+            throw new NoSuchTagException(name);
 
-		if (tag.getType() != type)
-			throw new WrongTagDataTypeException("");
+        if (tag.getType() != type)
+            throw new WrongTagDataTypeException("");
 
-		return tag;
-	}
+        return tag;
+    }
 
-	public byte getByte(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.BYTE);
-		return ((ByteTag) (tag)).getValue();
-	}
+    public byte getByte(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.BYTE);
+        return ((ByteTag) (tag)).getValue();
+    }
 
-	public short getShort(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.SHORT);
-		return ((ShortTag) (tag)).getValue();
-	}
+    public short getShort(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.SHORT);
+        return ((ShortTag) (tag)).getValue();
+    }
 
-	public int getInt(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.INT);
-		return ((IntTag) (tag)).getValue();
-	}
+    public int getInt(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.INT);
+        return ((IntTag) (tag)).getValue();
+    }
 
-	public long getLong(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.LONG);
-		return ((LongTag) (tag)).getValue();
-	}
+    public long getLong(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.LONG);
+        return ((LongTag) (tag)).getValue();
+    }
 
-	public float getFloat(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.FLOAT);
-		return ((FloatTag) (tag)).getValue();
-	}
+    public float getFloat(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.FLOAT);
+        return ((FloatTag) (tag)).getValue();
+    }
 
-	public double getDouble(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.DOUBLE);
-		return ((DoubleTag) (tag)).getValue();
-	}
+    public double getDouble(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.DOUBLE);
+        return ((DoubleTag) (tag)).getValue();
+    }
 
-	public byte[] getBytes(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.BYTE_ARRAY);
-		return ((ByteArrayTag) (tag)).getValue();
-	}
+    public byte[] getBytes(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.BYTE_ARRAY);
+        return ((ByteArrayTag) (tag)).getValue();
+    }
 
-	public String getString(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.STRING);
-		return ((StringTag) (tag)).getValue();
-	}
+    public String getString(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.STRING);
+        return ((StringTag) (tag)).getValue();
+    }
 
-	// TODO List
+    // TODO List
 
-	// TODO Compound
+    // TODO Compound
 
-	public int[] getInts(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.INT_ARRAY);
-		return ((IntArrayTag) (tag)).getValue();
-	}
+    public int[] getInts(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.INT_ARRAY);
+        return ((IntArrayTag) (tag)).getValue();
+    }
 
-	public long[] getLongs(String name) throws NbtException {
-		Tag tag = getTag(name, NbtTagType.LONG_ARRAY);
-		return ((LongArrayTag) (tag)).getValue();
-	}
+    public long[] getLongs(String name) throws NbtException {
+        Tag tag = getTag(name, NbtTagType.LONG_ARRAY);
+        return ((LongArrayTag) (tag)).getValue();
+    }
 
-	public boolean hasTag(String name) {
-		Tag tag = root.getTagByName(name);
-		return tag != null;
-	}
+    public boolean hasTag(String name) {
+        Tag tag = root.getTagByName(name);
+        return tag != null;
+    }
 
-	public Tag getRoot() {
-		return root;
-	}
+    public Tag getRoot() {
+        return root;
+    }
 
-	public void setRoot(Tag root) {
-		this.root = root;
-	}
+    public void setRoot(Tag root) {
+        this.root = root;
+    }
 
-	public class NoSuchTagException extends NbtException {
+    public class NoSuchTagException extends NbtException {
 
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-		public NoSuchTagException(String message) {
-			super(message);
-		}
+        public NoSuchTagException(String message) {
+            super(message);
+        }
 
-	}
+    }
 
-	public class WrongTagDataTypeException extends NbtException {
+    public class WrongTagDataTypeException extends NbtException {
 
-		private static final long serialVersionUID = 1L;
+        private static final long serialVersionUID = 1L;
 
-		public WrongTagDataTypeException(String message) {
-			super(message);
-		}
+        public WrongTagDataTypeException(String message) {
+            super(message);
+        }
 
-	}
+    }
 
 }

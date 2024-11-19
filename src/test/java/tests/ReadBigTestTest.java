@@ -16,21 +16,22 @@ import nbt.tags.Tag;
 public class ReadBigTestTest {
 
     private static boolean compressed = true;
-    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "bigtest.nbt";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER
+            + "bigtest.nbt";
 
     private static CompoundTag read() throws IOException {
-	NbtReader reader = new NbtReader(new File(FILE), compressed);
-	Tag tag = reader.read();
-	reader.close();
-	return (CompoundTag) tag;
+        NbtReader reader = new NbtReader(new File(FILE), compressed);
+        Tag tag = reader.read();
+        reader.close();
+        return (CompoundTag) tag;
     }
 
     @Test
     public void rootHasElevenElementsExceptEnd() throws IOException {
-	CompoundTag root = read();
-	int expected = 11;
-	int actual = root.getTagCountExceptEndTags();
-	Assert.assertEquals(expected, actual);
+        CompoundTag root = read();
+        int expected = 11;
+        int actual = root.getTagCountExceptEndTags();
+        Assert.assertEquals(expected, actual);
     }
 
 }

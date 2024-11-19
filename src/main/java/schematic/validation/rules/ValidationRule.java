@@ -5,8 +5,8 @@ import schematic.validation.InvalidSchematicCauses;
 
 public interface ValidationRule {
 
-	boolean isInvalid(CompoundTag root);
+    boolean isInvalid(CompoundTag root);
 
-	InvalidSchematicCauses getCause();
+    InvalidSchematicCauses getCause();
 
 }

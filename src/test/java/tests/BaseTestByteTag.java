@@ -19,51 +19,52 @@ import nbt.tags.Tag;
 public class BaseTestByteTag {
 
     private static boolean compressed = true;
-    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "base_byte_tag.nbt";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER
+            + "base_byte_tag.nbt";
 
     private static CompoundTag read() throws IOException {
-	NbtReader reader = new NbtReader(new File(FILE), compressed);
-	Tag tag = reader.read();
-	reader.close();
-	return (CompoundTag) tag;
+        NbtReader reader = new NbtReader(new File(FILE), compressed);
+        Tag tag = reader.read();
+        reader.close();
+        return (CompoundTag) tag;
     }
 
     @Test
     public void rootNameIsEmpty() throws IOException {
-	CompoundTag root = read();
-	Assert.assertTrue(root.getName().isEmpty());
+        CompoundTag root = read();
+        Assert.assertTrue(root.getName().isEmpty());
     }
 
     @Test
     public void rootContainsTwoElements() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(2, root.getTagCount());
+        CompoundTag root = read();
+        Assert.assertEquals(2, root.getTagCount());
     }
 
     @Test
     public void firstElementIsByteTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(NbtTagType.BYTE, root.getTagAt(0).getType());
+        CompoundTag root = read();
+        Assert.assertEquals(NbtTagType.BYTE, root.getTagAt(0).getType());
     }
 
     @Test
     public void secondElementIsEndTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(NbtTagType.END, root.getTagAt(1).getType());
+        CompoundTag root = read();
+        Assert.assertEquals(NbtTagType.END, root.getTagAt(1).getType());
     }
 
     @Test
     public void byteTagValueIsTwenty() throws IOException {
-	CompoundTag root = read();
-	ByteTag byteTag = (ByteTag) root.getTagAt(0);
-	Assert.assertEquals(20, byteTag.getValue());
+        CompoundTag root = read();
+        ByteTag byteTag = (ByteTag) root.getTagAt(0);
+        Assert.assertEquals(20, byteTag.getValue());
     }
 
     @Test
     public void byteTagNameIsByteTest() throws IOException {
-	CompoundTag root = read();
-	ByteTag byteTag = (ByteTag) root.getTagAt(0);
-	Assert.assertEquals("byteTest", byteTag.getName());
+        CompoundTag root = read();
+        ByteTag byteTag = (ByteTag) root.getTagAt(0);
+        Assert.assertEquals("byteTest", byteTag.getName());
     }
 
 }

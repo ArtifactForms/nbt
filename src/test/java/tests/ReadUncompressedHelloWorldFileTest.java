@@ -17,53 +17,54 @@ import nbt.tags.Tag;
  */
 public class ReadUncompressedHelloWorldFileTest {
 
-    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "hello_world.nbt";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER
+            + "hello_world.nbt";
 
     private static CompoundTag read() throws IOException {
-	NbtReader reader = new NbtReader(new File(FILE), false);
-	Tag tag = reader.read();
-	reader.close();
-	return (CompoundTag) tag;
+        NbtReader reader = new NbtReader(new File(FILE), false);
+        Tag tag = reader.read();
+        reader.close();
+        return (CompoundTag) tag;
     }
 
     @Test
     public void rootNameIsHelloWorld() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals("hello world", root.getName());
+        CompoundTag root = read();
+        Assert.assertEquals("hello world", root.getName());
     }
 
     @Test
     public void rootContainsOneElementAndOneEndTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(2, root.getTagCount());
+        CompoundTag root = read();
+        Assert.assertEquals(2, root.getTagCount());
     }
 
     @Test
     public void firstElementIsStringTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(NbtTagType.STRING, root.getTagAt(0).getType());
+        CompoundTag root = read();
+        Assert.assertEquals(NbtTagType.STRING, root.getTagAt(0).getType());
     }
 
     @Test
     public void secondElementIsEndTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(NbtTagType.END, root.getTagAt(1).getType());
+        CompoundTag root = read();
+        Assert.assertEquals(NbtTagType.END, root.getTagAt(1).getType());
     }
 
     @Test
     public void nameOfStringTagIsName() throws IOException {
-	String expected = "name";
-	CompoundTag root = read();
-	Tag tag = (StringTag) root.getTagAt(0);
-	Assert.assertEquals(expected, tag.getName());
+        String expected = "name";
+        CompoundTag root = read();
+        Tag tag = (StringTag) root.getTagAt(0);
+        Assert.assertEquals(expected, tag.getName());
     }
 
     @Test
     public void valueOfStringTagIsBananrama() throws IOException {
-	String expected = "Bananrama";
-	CompoundTag root = read();
-	StringTag tag = (StringTag) root.getTagByName("name");
-	Assert.assertEquals(expected, tag.getValue());
+        String expected = "Bananrama";
+        CompoundTag root = read();
+        StringTag tag = (StringTag) root.getTagByName("name");
+        Assert.assertEquals(expected, tag.getValue());
     }
 
 }

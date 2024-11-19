@@ -5,31 +5,31 @@ import java.util.List;
 
 public class SchematicValidationResult {
 
-	private List<InvalidSchematicCauses> causes;
+    private List<InvalidSchematicCauses> causes;
 
-	public SchematicValidationResult() {
-		causes = new ArrayList<InvalidSchematicCauses>();
-	}
+    public SchematicValidationResult() {
+        causes = new ArrayList<InvalidSchematicCauses>();
+    }
 
-	public InvalidSchematicCauses[] getCauses() {
-		return causes.toArray(new InvalidSchematicCauses[causes.size()]);
-	}
+    public InvalidSchematicCauses[] getCauses() {
+        return causes.toArray(new InvalidSchematicCauses[causes.size()]);
+    }
 
-	public String getCausesAsString() {
-		StringBuffer buffer = new StringBuffer();
-		InvalidSchematicCauses[] causes = getCauses();
-		for (InvalidSchematicCauses cause : causes) {
-			buffer.append("\n" + cause);
-		}
-		return buffer.toString();
-	}
+    public String getCausesAsString() {
+        StringBuffer buffer = new StringBuffer();
+        InvalidSchematicCauses[] causes = getCauses();
+        for (InvalidSchematicCauses cause : causes) {
+            buffer.append("\n" + cause);
+        }
+        return buffer.toString();
+    }
 
-	public void addCause(InvalidSchematicCauses cause) {
-		causes.add(cause);
-	}
+    public void addCause(InvalidSchematicCauses cause) {
+        causes.add(cause);
+    }
 
-	public boolean isInvalid() {
-		return !causes.isEmpty();
-	}
+    public boolean isInvalid() {
+        return !causes.isEmpty();
+    }
 
 }

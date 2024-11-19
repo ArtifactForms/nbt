@@ -6,15 +6,15 @@ import schematic.validation.InvalidSchematicCauses;
 
 public class RequiredAttributeLengthRule implements ValidationRule {
 
-	@Override
-	public boolean isInvalid(CompoundTag root) {
-		Tag tag = root.getTagByName("Length");
-		return tag == null;
-	}
+    @Override
+    public boolean isInvalid(CompoundTag root) {
+        Tag tag = root.getTagByName("Length");
+        return tag == null;
+    }
 
-	@Override
-	public InvalidSchematicCauses getCause() {
-		return InvalidSchematicCauses.MISSING_REQUIRED_ATTRIBUTE_LENGTH;
-	}
+    @Override
+    public InvalidSchematicCauses getCause() {
+        return InvalidSchematicCauses.MISSING_REQUIRED_ATTRIBUTE_LENGTH;
+    }
 
 }

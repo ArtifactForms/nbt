@@ -18,162 +18,175 @@ import nbt.visitor.TagVisitor;
 public class TestCountVisitsVisitor implements TagVisitor {
 
     private int visitedTotal;
+    
     private int visitedByteArrayTagCount;
+    
     private int visitedByteTagCount;
+    
     private int visitedDoubleTagCount;
+    
     private int visitedFloatTagCount;
+    
     private int visitedIntTagCount;
+    
     private int visitedLongTagCount;
+    
     private int visitedShortTagCount;
+    
     private int visitedInArrayTagCount;
+    
     private int visitedStringTagCount;
+    
     private int visitedCompoundTagCount;
+    
     private int visitedListTagCount;
+    
     private int visitedLongArrayTagCount;
+    
     private int visitedEndTagCount;
 
     private void incrementTotal() {
-	visitedTotal++;
+        visitedTotal++;
     }
 
     @Override
     public void visit(ByteArrayTag tag) {
-	visitedByteArrayTagCount++;
-	incrementTotal();
+        visitedByteArrayTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(ByteTag tag) {
-	visitedByteTagCount++;
-	incrementTotal();
+        visitedByteTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(DoubleTag tag) {
-	visitedDoubleTagCount++;
-	incrementTotal();
+        visitedDoubleTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(FloatTag tag) {
-	visitedFloatTagCount++;
-	incrementTotal();
+        visitedFloatTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(IntTag tag) {
-	visitedIntTagCount++;
-	incrementTotal();
+        visitedIntTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(LongTag tag) {
-	visitedLongTagCount++;
-	incrementTotal();
+        visitedLongTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(ShortTag tag) {
-	visitedShortTagCount++;
-	incrementTotal();
+        visitedShortTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(IntArrayTag tag) {
-	visitedInArrayTagCount++;
-	incrementTotal();
+        visitedInArrayTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(StringTag tag) {
-	visitedStringTagCount++;
-	incrementTotal();
+        visitedStringTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(CompoundTag tag) {
-	visitedCompoundTagCount++;
-	incrementTotal();
+        visitedCompoundTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(ListTag tag) {
-	visitedListTagCount++;
-	incrementTotal();
+        visitedListTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(LongArrayTag tag) {
-	visitedLongArrayTagCount++;
-	incrementTotal();
+        visitedLongArrayTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void visit(EndTag tag) {
-	visitedEndTagCount++;
-	incrementTotal();
+        visitedEndTagCount++;
+        incrementTotal();
     }
 
     @Override
     public void onEndList(ListTag tag) {
-	// TODO Auto-generated method stub
+        // TODO Auto-generated method stub
 
     }
 
     public int getVisitedTotal() {
-	return visitedTotal;
+        return visitedTotal;
     }
 
     public int getVisitedByteArrayTagCount() {
-	return visitedByteArrayTagCount;
+        return visitedByteArrayTagCount;
     }
 
     public int getVisitedByteTagCount() {
-	return visitedByteTagCount;
+        return visitedByteTagCount;
     }
 
     public int getVisitedDoubleTagCount() {
-	return visitedDoubleTagCount;
+        return visitedDoubleTagCount;
     }
 
     public int getVisitedFloatTagCount() {
-	return visitedFloatTagCount;
+        return visitedFloatTagCount;
     }
 
     public int getVisitedIntTagCount() {
-	return visitedIntTagCount;
+        return visitedIntTagCount;
     }
 
     public int getVisitedLongTagCount() {
-	return visitedLongTagCount;
+        return visitedLongTagCount;
     }
 
     public int getVisitedShortTagCount() {
-	return visitedShortTagCount;
+        return visitedShortTagCount;
     }
 
     public int getVisitedInArrayTagCount() {
-	return visitedInArrayTagCount;
+        return visitedInArrayTagCount;
     }
 
     public int getVisitedStringTagCount() {
-	return visitedStringTagCount;
+        return visitedStringTagCount;
     }
 
     public int getVisitedCompoundTagCount() {
-	return visitedCompoundTagCount;
+        return visitedCompoundTagCount;
     }
 
     public int getVisitedListTagCount() {
-	return visitedListTagCount;
+        return visitedListTagCount;
     }
 
     public int getVisitedLongArrayTagCount() {
-	return visitedLongArrayTagCount;
+        return visitedLongArrayTagCount;
     }
 
     public int getVisitedEndTagCount() {
-	return visitedEndTagCount;
+        return visitedEndTagCount;
     }
 
 }

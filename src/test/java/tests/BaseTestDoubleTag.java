@@ -19,51 +19,52 @@ import nbt.tags.Tag;
 public class BaseTestDoubleTag {
 
     private static boolean compressed = true;
-    private static final String FILE = TestUtil.TEST_FILES_PATH_READER + "base_double_tag.nbt";
+    private static final String FILE = TestUtil.TEST_FILES_PATH_READER
+            + "base_double_tag.nbt";
 
     private static CompoundTag read() throws IOException {
-	NbtReader reader = new NbtReader(new File(FILE), compressed);
-	Tag tag = reader.read();
-	reader.close();
-	return (CompoundTag) tag;
+        NbtReader reader = new NbtReader(new File(FILE), compressed);
+        Tag tag = reader.read();
+        reader.close();
+        return (CompoundTag) tag;
     }
 
     @Test
     public void rootNameIsEmpty() throws IOException {
-	CompoundTag root = read();
-	Assert.assertTrue(root.getName().isEmpty());
+        CompoundTag root = read();
+        Assert.assertTrue(root.getName().isEmpty());
     }
 
     @Test
     public void rootContainsTwoElements() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(2, root.getTagCount());
+        CompoundTag root = read();
+        Assert.assertEquals(2, root.getTagCount());
     }
 
     @Test
     public void firstElementIsDoubleTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(NbtTagType.DOUBLE, root.getTagAt(0).getType());
+        CompoundTag root = read();
+        Assert.assertEquals(NbtTagType.DOUBLE, root.getTagAt(0).getType());
     }
 
     @Test
     public void secondElementIsEndTag() throws IOException {
-	CompoundTag root = read();
-	Assert.assertEquals(NbtTagType.END, root.getTagAt(1).getType());
+        CompoundTag root = read();
+        Assert.assertEquals(NbtTagType.END, root.getTagAt(1).getType());
     }
 
     @Test
     public void doubleTagValueIsMinValue() throws IOException {
-	CompoundTag root = read();
-	DoubleTag doubleTag = (DoubleTag) root.getTagAt(0);
-	Assert.assertEquals(Double.MIN_VALUE, doubleTag.getValue(), 0.0001);
+        CompoundTag root = read();
+        DoubleTag doubleTag = (DoubleTag) root.getTagAt(0);
+        Assert.assertEquals(Double.MIN_VALUE, doubleTag.getValue(), 0.0001);
     }
 
     @Test
     public void doubleTagNameIsDoubleTest() throws IOException {
-	CompoundTag root = read();
-	DoubleTag doubleTag = (DoubleTag) root.getTagAt(0);
-	Assert.assertEquals("doubleTest", doubleTag.getName());
+        CompoundTag root = read();
+        DoubleTag doubleTag = (DoubleTag) root.getTagAt(0);
+        Assert.assertEquals("doubleTest", doubleTag.getName());
     }
 
 }
