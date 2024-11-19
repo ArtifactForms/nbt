@@ -41,6 +41,7 @@ public class Schematic {
     private static final String ENTITIES = "Entities";
 
     private byte[] blocks;
+    
     private byte[] data;
 
     private CompoundTag root;
