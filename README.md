@@ -28,6 +28,15 @@ NbtReader reader = new NbtReader(file, compressed);
 Tag root = reader.read();
 reader.close();
 ```
+**Explanation:**
+
+* ```compressed```: Set to ```true``` for a compressed file, ```false``` for uncompressed.
+* ```File```: Path to the NBT file.
+* ```NbtReader```: Creates a reader object for the file.
+* ```read```: Reads the NBT data and stores it in the root variable.
+* ```close```: Closes the reader to release resources.
+
+**Reading uncompressed files is similar, just set compressed to ```false```.**
 
 The equivalent to read an uncompressed NBT file:
 
