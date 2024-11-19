@@ -25,6 +25,7 @@ import schematic.validation.rules.ValidationRule;
 public class SchematicValidator {
 
 	private SchematicValidationResult result;
+	
 	private List<ValidationRule> rules;
 
 	public SchematicValidator() {

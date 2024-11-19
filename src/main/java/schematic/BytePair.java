@@ -3,6 +3,7 @@ package schematic;
 public class BytePair {
 
     private byte a;
+    
     private byte b;
 
     public BytePair(byte a, byte b) {

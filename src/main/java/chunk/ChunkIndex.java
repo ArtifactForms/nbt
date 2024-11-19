@@ -3,6 +3,7 @@ package chunk;
 public class ChunkIndex {
 
     private int x;
+    
     private int z;
 
     public ChunkIndex(int x, int z) {
