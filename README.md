@@ -16,11 +16,12 @@ writing schematic files (.schematic).
 
 ## Usage
 
-## Reading
+## Reading NBT files
 
 The following example shows how to read a compressed (gzip) NBT file:
 
 ```java
+// Indicate compressed file
 boolean compressed = true;
 File file = new File(path);
 NbtReader reader = new NbtReader(file, compressed);
