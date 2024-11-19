@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/ArtifactForms/nbt/actions/workflows/maven.yml/badge.svg)](https://github.com/ArtifactForms/nbt/actions/workflows/maven.yml)
+
 # NBT
 A library for **Named Binary Tag (NBT)** files.
 
