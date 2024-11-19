@@ -56,8 +56,19 @@ NbtReader reader = new NbtReader();
 ## Writing Schematics
 
 ```java
+
+// Define schematic dimensions
+int width = 10;
+int height = 20;
+int length = 30;
+
+// Create schematic object
 Schematic schematic = Schematic.createSchematic(width, height, length);
+
+// Set block at a specific position
 schematic.setBlockAt(x, y, z, Material.WOOL_LIME);
+
+// Write schematic data to a file
 schematic.write(new File("./foo.schematic"));
 ```
 
